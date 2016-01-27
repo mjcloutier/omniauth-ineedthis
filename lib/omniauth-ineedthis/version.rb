@@ -1,5 +1,5 @@
 module Omniauth
-  module Gitlab
+  module Ineedthis
     VERSION = '1.0.1'
   end
 end

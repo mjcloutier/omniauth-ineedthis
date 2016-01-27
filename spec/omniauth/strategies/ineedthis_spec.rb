@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe OmniAuth::Strategies::GitLab do
+describe OmniAuth::Strategies::INeedThis do
 
   let(:access_token) { double('AccessToken') }
   let(:parsed_response) { double('ParsedResponse') }
@@ -10,18 +10,21 @@ describe OmniAuth::Strategies::GitLab do
   let(:enterprise_authorize_url)  { '/oauth/authorize' }
   let(:enterprise_token_url)      { '/oauth/access_token' }
 
-  let(:gitlab_service) { OmniAuth::Strategies::GitLab.new({}) }
+  let(:ineedthis_service) { OmniAuth::Strategies::INeedThis.new({}) }
+
   let(:enterprise) do
-    OmniAuth::Strategies::GitLab.new('GITLAB_KEY', 'GITLAB_SECRET',
-                                         client_options: {
-                                             site: enterprise_site,
-                                             authorize_url: enterprise_authorize_url,
-                                             token_url: enterprise_token_url
-                                         }
+    OmniAuth::Strategies::INeedThis.new(
+      'INEEDTHIS_KEY',
+      'INEEDTHIS_SECRET',
+      client_options: {
+        site: enterprise_site,
+        authorize_url: enterprise_authorize_url,
+        token_url: enterprise_token_url
+      }
     )
   end
 
-  subject { gitlab_service }
+  subject { ineedthis_service }
 
   before(:each) do
     allow(subject).to receive(:access_token).and_return(access_token)
@@ -29,9 +32,9 @@ describe OmniAuth::Strategies::GitLab do
 
   describe 'client options' do
     context 'with defaults' do
-      subject { gitlab_service.options.client_options }
+      subject { ineedthis_service.options.client_options }
 
-      its(:site) { is_expected.to eq 'https://gitlab.com' }
+      its(:site) { is_expected.to eq 'https://ineedthis.org' }
       its(:authorize_url) { is_expected.to eq '/oauth/authorize' }
       its(:token_url) { is_expected.to eq '/oauth/token' }
     end

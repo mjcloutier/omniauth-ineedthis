@@ -1,16 +1,18 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
+
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'omniauth-gitlab/version'
+
+require 'omniauth-ineedthis/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = 'omniauth-gitlab'
-  gem.version       = Omniauth::Gitlab::VERSION
-  gem.authors       = ['ssein']
-  gem.email         = ['linchus@gmail.com']
-  gem.description   = %q{This is the strategy for authenticating to your GitLab service}
-  gem.summary       = %q{This is the strategy for authenticating to your GitLab service}
-  gem.homepage      = 'https://github.com/linchus/omniauth-gitlab'
+  gem.name          = 'omniauth-ineedthis'
+  gem.version       = Omniauth::Ineedthis::VERSION
+  gem.authors       = ['Michael Cloutier']
+  gem.email         = ['viotech@comcast.net']
+  gem.description   = %q{This is the strategy for authenticating to your INeedThis service}
+  gem.summary       = %q{This is the strategy for authenticating to your INeedThis service}
+  gem.homepage      = 'https://github.com/mjcloutier/omniauth-ineedthis'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

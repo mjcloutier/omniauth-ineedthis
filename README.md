@@ -1,18 +1,18 @@
-# Omniauth::Gitlab
+# Omniauth::Ineedthis
 
-[![Join the chat at https://gitter.im/linchus/omniauth-gitlab](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/linchus/omniauth-gitlab?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/mjcloutier/omniauth-ineedthis](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mjcloutier/omniauth-ineedthis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-This is the OAuth2 strategy for authenticating to your GitLab service.
+This is the OAuth2 strategy for authenticating to your INeedThis service.
 
 ## Requirements
 
-Gitlab 7.7.0+
- 
+INeedThis
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-gitlab'
+    gem 'omniauth-ineedthis'
 
 And then execute:
 
@@ -20,23 +20,22 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install omniauth-gitlab
+    $ gem install omniauth-ineedthis
 
 ## Basic Usage
 
     use OmniAuth::Builder do
-      provider :gitlab, ENV['GITLAB_KEY'], ENV['GITLAB_SECRET']
+      provider :ineedthis, ENV['INEEDTHIS_KEY'], ENV['INEEDTHIS_SECRET']
     end
 
 ## Standalone Usage
 
     use OmniAuth::Builder do
-      provider :gitlab, ENV['GITLAB_KEY'], ENV['GITLAB_SECRET'], 
-                                client_options: {
-                                     site: 'https://gitlab.YOURDOMAIN.com',
-                                     authorize_url: '/oauth/authorize',
-                                     token_url: '/oauth/token'
-                                 }      
+      provider :ineedthis, ENV['INEEDTHIS_KEY'], ENV['INEEDTHIS_SECRET'], client_options: {
+        site: 'https://ineedthis.org',
+        authorize_url: '/oauth/authorize',
+        token_url: '/oauth/token'
+      }      
     end
 
 ## Contributing

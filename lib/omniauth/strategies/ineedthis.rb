@@ -1,12 +1,11 @@
-
 require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
-    class GitLab < OmniAuth::Strategies::OAuth2
+    class INeedThis < OmniAuth::Strategies::OAuth2
 
       option :client_options, {
-          site: 'https://gitlab.com',
+          site: 'https://ineedthis.org',
           authorize_url: '/oauth/authorize',
           token_url: '/oauth/token'
       }
@@ -15,10 +14,10 @@ module OmniAuth
 
       info do
         {
-            name:     raw_info['name'],
-            username: raw_info['username'],
-            email:    raw_info['email'],
-            image:    raw_info['avatar_url']
+          name:     raw_info['name'],
+          username: raw_info['username'],
+          email:    raw_info['email'],
+          image:    raw_info['avatar_url']
         }
       end
 
@@ -33,5 +32,4 @@ module OmniAuth
   end
 end
 
-
-OmniAuth.config.add_camelization 'gitlab', 'GitLab'
+OmniAuth.config.add_camelization 'ineedthis', 'INeedThis'
